@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    class Class1
+    class Map
     {
     }
 }

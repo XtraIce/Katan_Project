@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    class ROre: BResource
+    class FieldT : BTile
     {
-        string name;
-        ROre(int value,string name):base(value)
+        public FieldT(int diceValue,int []edge,bool banditFlag):base(diceValue,edge,banditFlag)
         {
-            
+
         }
     }
 }

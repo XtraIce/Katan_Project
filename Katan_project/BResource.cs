@@ -6,11 +6,26 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    public abstract class BResource
+    public class BResource
     {
-        public int Value { get; }
-        public int Name { get; set; }
+        int resValue;
+        public int Value {
+            get
+            {
+                return resValue;
+            }
+            set {
+                if (value > 0)
+                    resValue = value; 
+                }
+        }
+        string name;
+        public string Name { get; set; }
 
-        public BResource(int value) => Value = value;
+        public BResource(string inputName,int inputValue)
+        {
+            Name = inputName;
+            resValue = inputValue;
+        }
     }
 }

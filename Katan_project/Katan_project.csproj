@@ -45,17 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TField.cs" />
     <Compile Include="TDesert.cs" />
-    <Compile Include="RSheep.cs" />
-    <Compile Include="RLumber.cs" />
-    <Compile Include="RBrick.cs" />
-    <Compile Include="RGrain.cs" />
-    <Compile Include="ROre.cs" />
     <Compile Include="TPasture.cs" />
-    <Compile Include="HillT.cs" />
     <Compile Include="TMountain.cs" />
-    <Compile Include="TForest.cs" />
     <Compile Include="BResource.cs" />
     <Compile Include="BTile.cs" />
     <Compile Include="MainMenu.cs">

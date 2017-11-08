@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    class RSheep: BResource
+    public class THill:BTile
     {
-        RSheep(int value, string name):base(value)
+        BResource Brick = new BResource("Brick", 1);
+        public THill(int diceValue, int[] edge, bool banditFlag):base(diceValue,edge,banditFlag)
         {
 
         }

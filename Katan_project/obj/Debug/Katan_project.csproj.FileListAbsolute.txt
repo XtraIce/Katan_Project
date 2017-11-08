@@ -1,0 +1,11 @@
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\bin\Debug\Katan_project.exe.config
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\bin\Debug\Katan_project.exe
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\bin\Debug\Katan_project.pdb
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.csprojResolveAssemblyReference.cache
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.GameWindow.resources
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.MainMenu.resources
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.Properties.Resources.resources
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.csproj.GenerateResource.Cache
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.csproj.CoreCompileInputs.cache
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.exe
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.pdb
