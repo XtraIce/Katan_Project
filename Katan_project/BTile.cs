@@ -18,5 +18,16 @@ namespace Katan_project
             edge_ = edge;
             bandit_Flag = banditFlag;
         }
+        public void TileAssignValue(int newValue)
+        {
+            if(0<newValue && newValue<=12)
+            {
+                dice_Value = newValue;
+            }
+            else
+            {
+                Console.WriteLine("invalid dice value. Please assign a valid number between 1-12");
+            }
+        }
     }
 }

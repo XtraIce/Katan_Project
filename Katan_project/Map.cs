@@ -26,7 +26,7 @@ namespace Katan_project
         TDesert Desert;
         public Map()
         {
-
+           
         }
         /// <summary>
         /// Generates the layout of the map in the standard format
@@ -133,6 +133,30 @@ namespace Katan_project
                             continue;
                 }
             }
+        }
+        /// <summary>
+        /// assign dice values to each tile on the map using public method of BTile to access private member dice_value
+        /// </summary>
+        public void AssignNumber()
+        {
+            MapLayout[0].TileAssignValue(10);
+            MapLayout[1].TileAssignValue(12);
+            MapLayout[2].TileAssignValue(9);
+            MapLayout[3].TileAssignValue(8);
+            MapLayout[4].TileAssignValue(5);
+            MapLayout[5].TileAssignValue(6);
+            MapLayout[6].TileAssignValue(11);
+            MapLayout[7].TileAssignValue(5);
+            MapLayout[8].TileAssignValue(8);
+            MapLayout[9].TileAssignValue(10);
+            MapLayout[10].TileAssignValue(9);
+            MapLayout[11].TileAssignValue(2);
+            MapLayout[12].TileAssignValue(6);
+            MapLayout[13].TileAssignValue(11);
+            MapLayout[14].TileAssignValue(3);
+            MapLayout[15].TileAssignValue(4);
+            MapLayout[16].TileAssignValue(3);
+            MapLayout[17].TileAssignValue(4);
         }
     }
 }

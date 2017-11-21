@@ -11,7 +11,7 @@ namespace Katan_project
         BResource Sheep = new BResource("Sheep", 1);
         public TPasture(int diceValue, int[] edge, bool banditFlag):base(diceValue,edge,banditFlag)
         {
-            Sheep.Value = 5;
+            Sheep.Value = 1;
         }
     }
 }
