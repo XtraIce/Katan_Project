@@ -27,5 +27,7 @@ namespace Katan_project
             Name = inputName;
             resValue = inputValue;
         }
+
+        public int 
     }
 }

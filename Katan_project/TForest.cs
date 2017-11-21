@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    class TField : BTile
+    public class TForest: BTile
     {
-        public TField(int diceValue,int []edge,bool banditFlag):base(diceValue,edge,banditFlag)
+        public TForest(int diceValue, int[] edge, bool banditFlag):base(diceValue,edge,banditFlag)
         {
 
         }

@@ -14,9 +14,9 @@ namespace Katan_project
 
         public BTile(int diceValue, int []edge,bool banditFlag)
         {
-            diceValue = dice_Value;
-            edge = edge_;
-            banditFlag = bandit_Flag;
+            dice_Value = diceValue;
+            edge_ = edge;
+            bandit_Flag = banditFlag;
         }
     }
 }
