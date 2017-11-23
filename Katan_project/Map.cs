@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    class Map
+    public class Map
     {
         /// <summary>
         /// Each map consists of:
@@ -16,43 +16,65 @@ namespace Katan_project
         /// 4 Pasture   tiles
         /// 4 Forest    tiles
         /// 1 Desert    tiles
+        /// 
+        /// 4 anytype   ports
+        /// 1 sheep     port
+        /// 1 wood      port
+        /// 1 brick     port
+        /// 1 ore       port
+        /// 1 grain     port
         /// </summary>
-        BTile[] MapLayout = new BTile[18];
-        TMountain[] Mountain = new TMountain[2];
-        TField[] Field = new TField[3];
-        THill[] Hill = new THill[2];
-        TPasture[] Pasture = new TPasture[3];
-        TForest[] Forest = new TForest[3];
-        TDesert Desert;
+        BTile[] MapTile = new BTile[18];
+        TMountain[] Mountain = new TMountain[3];
+        TField[] Field = new TField[4];
+        THill[] Hill = new THill[3];
+        TPasture[] Pasture = new TPasture[4];
+        TForest[] Forest = new TForest[4];
+        TDesert [] Desert = new TDesert[1] ;
+
+        Port[] MapPort = new Port[]
+        {
+            new Port(2,"sheep"),
+            new Port(2,"wood"),
+            new Port(2,"brick"),
+            new Port(2,"ore"),
+            new Port(2,"grain"),
+            new Port(3, "any"),
+            new Port(3, "any"),
+            new Port(3, "any"),
+            new Port(3, "any")
+        };
         public Map()
         {
-           
+            SetGenerate();
+            AssignNumber();
+            SetBandit();
         }
         /// <summary>
         /// Generates the layout of the map in the standard format
         /// Follows the max criteria of eah tile type
         /// </summary>
-        public void SetGenerate()
+        void SetGenerate()
         {
-            MapLayout[0]  = Mountain[0];
-            MapLayout[1]  = Field[0];
-            MapLayout[2]  = Field[1];
-            MapLayout[3]  = Forest[0];
-            MapLayout[4]  = Hill[0];
-            MapLayout[5]  = Field[2];
-            MapLayout[6]  = Pasture[0];
-            MapLayout[7]  = Pasture[1];
-            MapLayout[8]  = Mountain[1];
-            MapLayout[9]  = Hill[1];
-            MapLayout[10] = Forest[1];
-            MapLayout[11] = Pasture[2];
-            MapLayout[12] = Hill[2];
-            MapLayout[13] = Forest[2];
-            MapLayout[14] = Mountain[2];
-            MapLayout[15] = Field[3];
-            MapLayout[16] = Forest[3];
-            MapLayout[17] = Pasture[3];
-            MapLayout[18] = Desert;
+            MapTile[0]  = Mountain[0];
+            MapTile[1]  = Field[0];
+            MapTile[2]  = Field[1];
+            MapTile[3]  = Forest[0];
+            MapTile[4]  = Hill[0];
+            MapTile[5]  = Field[2];
+            MapTile[6]  = Pasture[0];
+            MapTile[7]  = Pasture[1];
+            MapTile[8]  = Mountain[1];
+            MapTile[9]  = Hill[1];
+            MapTile[10] = Forest[1];
+            MapTile[11] = Pasture[2];
+            MapTile[12] = Hill[2];
+            MapTile[13] = Forest[2];
+            MapTile[14] = Mountain[2];
+            MapTile[15] = Field[3];
+            MapTile[16] = Forest[3];
+            MapTile[17] = Pasture[3];
+            MapTile[18] = Desert[0];
 
         }
         /// <summary>
@@ -60,7 +82,7 @@ namespace Katan_project
         /// Checks that the the amount of tiles generated does not exceed the max set amount
         /// per tile type
         /// </summary>
-        public void RandGenerate()
+        void RandGenerate()
         {
             Random rnd = new Random();
             int numField=0;
@@ -79,7 +101,7 @@ namespace Katan_project
                     {
                         if (numField <= 3)
                         {
-                            MapLayout[i] = Field[numField];
+                            MapTile[i] = Field[numField];
                             numField++;
                             break;
                         }
@@ -89,7 +111,7 @@ namespace Katan_project
                     else if (numDecide == 1)
                         if (numForest <= 3)
                         {
-                            MapLayout[i] = Forest[numForest];
+                            MapTile[i] = Forest[numForest];
                             numForest++;
                             break;
                         }
@@ -98,7 +120,7 @@ namespace Katan_project
                     else if (numDecide == 2)
                         if (numHill <= 2)
                         {
-                            MapLayout[i] = Forest[numHill];
+                            MapTile[i] = Forest[numHill];
                             numHill++;
                             break;
                         }
@@ -107,7 +129,7 @@ namespace Katan_project
                     else if (numDecide == 3)
                         if (numMountain <= 2)
                         {
-                            MapLayout[i] = Forest[numMountain];
+                            MapTile[i] = Forest[numMountain];
                             numMountain++;
                             break;
                         }
@@ -116,7 +138,7 @@ namespace Katan_project
                     else if (numDecide == 4)
                         if (numPasture <= 3)
                         {
-                            MapLayout[i] = Forest[numPasture];
+                            MapTile[i] = Forest[numPasture];
                             numPasture++;
                             break;
                         }
@@ -125,7 +147,7 @@ namespace Katan_project
                     else
                         if (numDesert < 1)
                         {
-                            MapLayout[i] = Forest[numDesert];
+                            MapTile[i] = Forest[numDesert];
                             numDesert++;
                             break;
                         }
@@ -135,28 +157,93 @@ namespace Katan_project
             }
         }
         /// <summary>
-        /// assign dice values to each tile on the map using public method of BTile to access private member dice_value
+        /// assign dice values to each tile on the map using 
+        /// public method of BTile to access private member dice_Value
         /// </summary>
-        public void AssignNumber()
+        void AssignNumber()
         {
-            MapLayout[0].TileAssignValue(10);
-            MapLayout[1].TileAssignValue(12);
-            MapLayout[2].TileAssignValue(9);
-            MapLayout[3].TileAssignValue(8);
-            MapLayout[4].TileAssignValue(5);
-            MapLayout[5].TileAssignValue(6);
-            MapLayout[6].TileAssignValue(11);
-            MapLayout[7].TileAssignValue(5);
-            MapLayout[8].TileAssignValue(8);
-            MapLayout[9].TileAssignValue(10);
-            MapLayout[10].TileAssignValue(9);
-            MapLayout[11].TileAssignValue(2);
-            MapLayout[12].TileAssignValue(6);
-            MapLayout[13].TileAssignValue(11);
-            MapLayout[14].TileAssignValue(3);
-            MapLayout[15].TileAssignValue(4);
-            MapLayout[16].TileAssignValue(3);
-            MapLayout[17].TileAssignValue(4);
+            MapTile[0].TileAssignValue(10);
+            MapTile[1].TileAssignValue(12);
+            MapTile[2].TileAssignValue(9);
+            MapTile[3].TileAssignValue(8);
+            MapTile[4].TileAssignValue(5);
+            MapTile[5].TileAssignValue(6);
+            MapTile[6].TileAssignValue(11);
+            MapTile[7].TileAssignValue(5);
+            MapTile[8].TileAssignValue(8);
+            MapTile[9].TileAssignValue(10);
+            MapTile[10].TileAssignValue(9);
+            MapTile[11].TileAssignValue(2);
+            MapTile[12].TileAssignValue(6);
+            MapTile[13].TileAssignValue(11);
+            MapTile[14].TileAssignValue(3);
+            MapTile[15].TileAssignValue(4);
+            MapTile[16].TileAssignValue(3);
+            MapTile[17].TileAssignValue(4);
+            MapTile[18].TileAssignValue(0);
+        }
+        /// <summary>
+        /// generate ports on specified tiles
+        void GeneratePorts()
+        {
+            Random rnd = new Random();
+            bool[]PortPlaced = new bool[9];
+            for(int i = 0; i <= 8; i++)
+            {
+                while (true)
+                {
+                    int select = rnd.Next(1, 9);
+
+                    if (select == 1 && MapTile[0].CheckEmptyPort())
+                    {
+                        MapTile[0].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 2 && MapTile[1].CheckEmptyPort())
+                    {
+                        MapTile[1].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 3 && MapTile[3].CheckEmptyPort())
+                    {
+                        MapTile[3].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 4 && MapTile[4].CheckEmptyPort())
+                    {
+                        MapTile[4].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 5 && MapTile[5].CheckEmptyPort())
+                    {
+                        MapTile[5].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 6 && MapTile[7].CheckEmptyPort())
+                    {
+                        MapTile[7].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 7 && MapTile[8].CheckEmptyPort())
+                    {
+                        MapTile[8].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 8 && MapTile[9].CheckEmptyPort())
+                    {
+                        MapTile[9].SetPort(MapPort[i]);break;
+                    }
+                    else if (select == 9 && MapTile[11].CheckEmptyPort())
+                    {
+                        MapTile[11].SetPort(MapPort[i]);break;
+                    }
+                    else
+                        continue;
+                }
+            }
+        }
+        void SetBandit()
+        {
+            for(int i = 0; i <= 18; i++)
+            {
+                if (MapTile[i].GetName()=="Desert")
+                {
+                    MapTile[i].SetBF();
+                }
+            }
         }
     }
 }

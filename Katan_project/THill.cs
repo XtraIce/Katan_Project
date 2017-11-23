@@ -8,10 +8,12 @@ namespace Katan_project
 {
     public class THill:BTile
     {
-        BResource Brick = new BResource("Brick", 1);
-        public THill(int diceValue, int[] edge, bool banditFlag):base(diceValue,edge,banditFlag)
+        BResource Brick;
+        public THill(string typeName,int diceValue, int[] edge, int[] vertice, bool banditFlag, bool port) :base(typeName,diceValue,edge,vertice,banditFlag,port)
         {
-
+            typeName = "Hill";
+            Brick.Value = 1;
+            Brick.Name = "Brick";
         }
     }
 }

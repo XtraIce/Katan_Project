@@ -20,14 +20,23 @@ namespace Katan_project
                 }
         }
         string name;
-        public string Name { get; set; }
-
+        public string Name {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (value is string)
+                    name = value;
+                else
+                    Console.WriteLine("Invalid Name. Try Again");
+            }
+        }
         public BResource(string inputName,int inputValue)
         {
             Name = inputName;
             resValue = inputValue;
         }
-
-        public int 
     }
 }

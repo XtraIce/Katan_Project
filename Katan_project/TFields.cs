@@ -8,9 +8,12 @@ namespace Katan_project
 {
     class TField : BTile
     {
-        public TField(int diceValue,int []edge,bool banditFlag):base(diceValue,edge,banditFlag)
+        BResource Grain;
+        public TField(string typeName, int diceValue,int []edge, int[] vertice, bool banditFlag, bool port) :base(typeName, diceValue,edge,vertice,banditFlag, port)
         {
-
+            typeName = "Field";
+            Grain.Value = 1;
+            Grain.Name = "Grain";
         }
     }
 }
