@@ -13,7 +13,7 @@ namespace Katan_project
         {
             typeName = "Field";
             Grain.Value = 1;
-            Grain.Name = "Grain";
+            Grain.Type = "Grain";
         }
     }
 }

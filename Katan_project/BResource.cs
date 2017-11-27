@@ -19,23 +19,23 @@ namespace Katan_project
                     resValue = value; 
                 }
         }
-        string name;
-        public string Name {
+        string type;
+        public string Type {
             get
             {
-                return name;
+                return type;
             }
             set
             {
                 if (value is string)
-                    name = value;
+                    type = value;
                 else
                     Console.WriteLine("Invalid Name. Try Again");
             }
         }
         public BResource(string inputName,int inputValue)
         {
-            Name = inputName;
+            type = inputName;
             resValue = inputValue;
         }
     }

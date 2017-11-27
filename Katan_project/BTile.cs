@@ -10,8 +10,8 @@ namespace Katan_project
     {
         string TypeName;
         int DiceValue;
-        int[] Edge = new int[6];
-        int[] Vertice = new int[6];
+        public int[] Edge = new int[6];
+        public int[] Vertice = new int[6];
         Port PortOwned = null;
         bool BanditFlag;
         bool HasPort;

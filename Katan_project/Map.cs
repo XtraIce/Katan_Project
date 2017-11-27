@@ -24,7 +24,7 @@ namespace Katan_project
         /// 1 ore       port
         /// 1 grain     port
         /// </summary>
-        BTile[] MapTile = new BTile[18];
+        public BTile[] MapTile = new BTile[19];
         TMountain[] Mountain = new TMountain[3];
         TField[] Field = new TField[4];
         THill[] Hill = new THill[3];

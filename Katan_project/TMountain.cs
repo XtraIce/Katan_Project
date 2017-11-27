@@ -13,7 +13,7 @@ namespace Katan_project
         {
             typeName = "Mountain";
             Ore.Value = 1;
-            Ore.Name = "Ore";
+            Ore.Type = "Ore";
         }
     }
 }

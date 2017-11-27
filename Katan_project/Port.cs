@@ -9,8 +9,21 @@ namespace Katan_project
     public class Port
     {
         int TradeRate;
-        string TradeType;
-        
+        string tradeType;
+        public string TradeType
+        {
+            get
+            {
+                return tradeType;
+            }
+            set
+            {
+                if (value is string)
+                    tradeType = value;
+                else
+                    Console.WriteLine("Invalid Name. Try Again");
+            }
+        }
         public Port(int tradeR,string tradeT)
         {
             TradeRate = tradeR;

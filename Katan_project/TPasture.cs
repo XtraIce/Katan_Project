@@ -13,7 +13,7 @@ namespace Katan_project
         {
             typeName = "Pasture";
             Sheep.Value = 1;
-            Sheep.Name = "Sheep";
+            Sheep.Type = "Sheep";
         }
     }
 }

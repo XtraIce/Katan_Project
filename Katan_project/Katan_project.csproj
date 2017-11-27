@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameMaster.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Port.cs" />
     <Compile Include="TDesert.cs" />
     <Compile Include="TFields.cs" />
