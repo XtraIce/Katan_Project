@@ -173,72 +173,278 @@ namespace Katan_project
         {
 
         }
-
+        /// <summary>
+        /// DistanceRule checks the vertice selected to see if neighboring vertices are occupied
+        /// If occupied, returns false
+        /// If unoccupied, returns true
+        /// </summary>
+        /// <param name="selTile"></param>
+        /// <param name="selVer"></param>
+        /// <returns></returns>
         bool DistanceRule(int selTile,int selVer)
         {
- 
+
+            /// REFERENCE MAP
+            /// 
+            ///                0    11    10
+            ///
+            ///            1    12     17    9
+            ///            
+            ///        2     13     18    16     8
+            ///        
+            ///            3     14    15     7
+            ///            
+            ///                4     5    6
+            /// REFERENCE MAP
+
             int k = 0;
+            int o = 0;
+            int caseNum = selVer;
+            // All the proper offsets for tiles and their relationships to neighboring tiles
             switch (selTile)
             {
-                case 1: k = 1; break;
-                case 3: k = 2; selVer += 5; break;
-                case 5: k = 3; selVer += 4; break;
-                case 7: k = 4; selVer += 3; break;
-                case 9: k = 5; selVer += 2; break;
-                case 11: k = 6;selVer += 1; break;
+                case 1: break;
+                case 2: break;
+                case 3: k = 1; caseNum += 1; break;
+                case 4: k = 2; caseNum += 1; break;
+                case 5: k = 2; caseNum += 2; break;
+                case 6: k = 3; caseNum += 2; break;
+                case 7: k = 3; caseNum += 3; break;
+                case 8: k = 4; caseNum += 3; break;
+                case 9: k = 4; caseNum += 4; break;
+                case 10: k = 5; caseNum += 4; break;
+                case 13: k = 12; o = 5; break;
+                case 14: k = 11; o = 4;  caseNum += 1;break;
+                case 15: k = 10; o = 3;  caseNum += 2;break;
+                case 16: k = 9;  o = 2;  caseNum += 3;break;
             }
-            switch (selVer)
+            // If the maxVert number (5) is exceeded, then it resets
+            switch (caseNum)
             {
-                case 6: selVer = 0; break;
-                case 7: selVer = 1; break;
-                case 8: selVer = 2; break;
-                case 9: selVer = 3; break;
-                case 10: selVer = 4;break;
+                case 6: caseNum = 0; break;
+                case 7: caseNum = 1; break;
+                case 8: caseNum = 2; break;
+                case 9: caseNum = 3; break;
             }
+            //m is the previous vertice
             int m = selVer - 1;
             if (m == -1)
                 m = 5;
+            //n is the following vertice
             int n = selVer + 1;
             if (n == 6)
                 n = 0;
+            //j variable is the neighboring relationship to the inner tile from the outer tile
             int j = 12 - selTile + k;
-            if(selTile == 0)
+            //Tiles 2,4,6,8,10 have same relationships as 1,3,5,7,9
+            //except for vertice 4 is bordering the ocean & only
+            //neighbor one inner tile, so this:
+            //sets a vert4 case to a vert5
+            //sets a vert2 case to a vert3 
+            if (selTile%2==0 && selTile<=10)
             {
-
+                if (caseNum==4)
+                    caseNum = 5;
+                if (caseNum == 2 || caseNum==3)
+                {
+                    caseNum = 3;
+                    m = n;
+                }
             }
-            if (selTile == 1 || selTile == 3 || selTile == 5 || selTile == 7 || selTile == 9 || selTile == 11)//11 should be excluded
+            //Tile 17 is unique in neighboring-tile relationships
+            if (selTile == 0)
             {
-                switch (selVer)
+                switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile-1].Vertice[m] == 0)
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile-j].Vertice[m] == 0)
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[11].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile-j+1].Vertice[n] == 0)
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[12].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+1].Vertice[n] == 0)
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[1].Vertice[n] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+1].Vertice[m] == 0)
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[1].Vertice[m] == 0)
                             return true;
                         break;
                     case 5:
                         if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
                             return true;
                         break;
+                    default: return false;
                 }
-
-
             }
-            
+            else if (selTile == 1 || selTile == 2 || selTile == 3 || selTile == 4 || selTile == 5 || selTile == 6 || selTile == 7 || selTile == 8 || selTile == 9 || selTile == 10)
+            {
+                switch (caseNum)
+                {
+                    case 0:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile-1].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 1:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+j].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 2:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+j+1].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 3:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+1].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 4:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+1].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 5:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
+                            return true;
+                        break;
+                    default: return false;
+                }
+            }
+            //Tile 11 is unique in neighboring-tile relationships
+            else if (selTile==11)
+            {
+                switch (caseNum)
+                {
+                    case 0:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 1:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[10].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 2:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[17].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 3:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[12].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 4:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[0].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 5:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[0].Vertice[n]==0)
+                            return true;
+                        break;
+                    default: return false;
+                }
+            }
+            //Tile 11 is unique in neighboring-tile relationships
+            else if (selTile==12)
+            {
+                switch (caseNum)
+                {
+                    case 0:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[0].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 1:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[11].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 2:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[17].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 3:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[18].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 4:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[13].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 5:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[1].Vertice[n] == 0)
+                            return true;
+                        break;
+                    default: return false;
+                }
+            }
+            //Tiles 13,14,15,16 share the same tile #neighboring-tile relationships in reference to its own, but 14,15,16 are rotated from 13
+            //because the map is circular. variable k and o account for this rotation.
+            else if ( selTile == 13 || selTile == 14 || selTile == 15 || selTile == 16)//11 should be excluded
+            {
+                switch (caseNum)
+                {
+                    case 0:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - k].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 1:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - 1].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 2:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile + o].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 3:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile + 1].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 4:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - k + 2].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 5:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - k + 1].Vertice[n] == 0)
+                            return true;
+                        break;
+                    default: return false;
+                }
+            }
+            //Tile 17 is unique in neighboring-tile relationships
+            else if (selTile == 17)
+            {
+                switch (caseNum)
+                {
+                    case 0:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[11].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 1:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[10].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 2:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[9].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 3:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[16].Vertice[n] == 0)
+                            return true;
+                        break;
+                    case 4:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[18].Vertice[m] == 0)
+                            return true;
+                        break;
+                    case 5:
+                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[12].Vertice[n] == 0)
+                            return true;
+                        break;
+                    default: return false;
+                }
+            }
+            Console.WriteLine("Not a valid path on CatanMap");
+            return false;
         }
 
     }
