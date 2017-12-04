@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Katan_project
 {
-    public class GameMaster: Map
+    public static class GameMaster
     {
         /// <summary>
         /// player 1 settlement: 1
@@ -18,135 +18,127 @@ namespace Katan_project
         /// player 4 settlement: 4
         /// "      " city: 44
         /// /// </summary>
-        public void GenerateResource(Player P1,Player P2,Player P3,Player P4)
+        public static void GenerateResource(Map Map,Player P1,Player P2,Player P3,Player P4)
         {
             for(int i = 0; i <= 18; i++)
             {
                 for(int j = 0;j<=5;j++)
                 {
-                    if(MapTile[i].Vertice[j]==1)
+                    if(Map.MapTile[i].Vertice[j]==1)
                     {
-                        if(MapTile[i] is TPasture)
+                        if(Map.MapTile[i] is TPasture)
                             P1.SheepHeld.Value += 1;
-                        if(MapTile[i] is THill)
+                        if(Map.MapTile[i] is THill)
                             P1.BrickHeld.Value += 1;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P1.OreHeld.Value += 1;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P1.WoodHeld.Value += 1;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P1.GrainHeld.Value += 1;
                     }
-                    else if (MapTile[i].Vertice[j] == 11)
+                    else if (Map.MapTile[i].Vertice[j] == 11)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P1.SheepHeld.Value += 2;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P1.BrickHeld.Value += 2;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P1.OreHeld.Value += 2;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P1.WoodHeld.Value += 2;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P1.GrainHeld.Value += 2;
                     }
-                    if (MapTile[i].Vertice[j] == 2)
+                    if (Map.MapTile[i].Vertice[j] == 2)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P2.SheepHeld.Value += 1;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P2.BrickHeld.Value += 1;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P2.OreHeld.Value += 1;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P2.WoodHeld.Value += 1;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P2.GrainHeld.Value += 1;
                     }
-                    else if (MapTile[i].Vertice[j] == 22)
+                    else if (Map.MapTile[i].Vertice[j] == 22)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P2.SheepHeld.Value += 2;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P2.BrickHeld.Value += 2;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P2.OreHeld.Value += 2;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P2.WoodHeld.Value += 2;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P2.GrainHeld.Value += 2;
                     }
-                    if (MapTile[i].Vertice[j] == 3)
+                    if (Map.MapTile[i].Vertice[j] == 3)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P3.SheepHeld.Value += 1;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P3.BrickHeld.Value += 1;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P3.OreHeld.Value += 1;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P3.WoodHeld.Value += 1;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P3.GrainHeld.Value += 1;
                     }
-                    else if (MapTile[i].Vertice[j] == 33)
+                    else if (Map.MapTile[i].Vertice[j] == 33)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P3.SheepHeld.Value += 2;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P3.BrickHeld.Value += 2;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P3.OreHeld.Value += 2;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P3.WoodHeld.Value += 2;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P3.GrainHeld.Value += 2;
                     }
-                    if (MapTile[i].Vertice[j] == 4)
+                    if (Map.MapTile[i].Vertice[j] == 4)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P4.SheepHeld.Value += 1;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P4.BrickHeld.Value += 1;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P4.OreHeld.Value += 1;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P4.WoodHeld.Value += 1;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P4.GrainHeld.Value += 1;
                     }
-                    else if (MapTile[i].Vertice[j] == 44)
+                    else if (Map.MapTile[i].Vertice[j] == 44)
                     {
-                        if (MapTile[i] is TPasture)
+                        if (Map.MapTile[i] is TPasture)
                             P4.SheepHeld.Value += 2;
-                        if (MapTile[i] is THill)
+                        if (Map.MapTile[i] is THill)
                             P4.BrickHeld.Value += 2;
-                        if (MapTile[i] is TMountain)
+                        if (Map.MapTile[i] is TMountain)
                             P4.OreHeld.Value += 2;
-                        if (MapTile[i] is TForest)
+                        if (Map.MapTile[i] is TForest)
                             P4.WoodHeld.Value += 2;
-                        if (MapTile[i] is TField)
+                        if (Map.MapTile[i] is TField)
                             P4.GrainHeld.Value += 2;
                     }
                 }
             }
         }
-        public void PlaceSettlement(Player currentPlayer,int selTile,int selVer)
+        public static void PlaceSettlement(Map Map,Player currentPlayer, int selTile, int selVer)
         {
             if (currentPlayer.WoodHeld.Value >= 1 && currentPlayer.GrainHeld.Value >= 1 &&
                currentPlayer.BrickHeld.Value >= 1 && currentPlayer.SheepHeld.Value >= 1)
             {
-                if (MapTile[selTile].Vertice[selVer] == 0)
+                if (Map.MapTile[selTile].Vertice[selVer] == 0 && DistanceRule(Map,selTile,selVer))
                 {
-                    if(selTile == 0)
-                    {
-                        if (selVer == 0 && MapTile[selTile].Vertice[1] == 0
-                            && MapTile[selTile].Vertice[5] == 0)
-                        {
-
-                        }
-                    }
-
+                    Map.MapTile[selTile].Vertice[selVer] = currentPlayer.PlayerNumber;
                 }
                 else
                 {
@@ -158,18 +150,27 @@ namespace Katan_project
                 Console.WriteLine("Insufficient resources.");
             }
         }
-        public void PlaceRoad(int i, int j, Player currentPlayer)
+        public static void UpgradeToCity(Map Map,Player currentPlayer, int selTile, int selVer)
         {
-            if(currentPlayer.WoodHeld.Value>=1 && currentPlayer.BrickHeld.Value >= 1)
+            if(currentPlayer.GrainHeld.Value>=2&&currentPlayer.OreHeld.Value>=3)
             {
-                MapTile[i].Edge[j] = currentPlayer.PlayerNumber;
+                currentPlayer.GrainHeld.Value -= 2;
+                currentPlayer.OreHeld.Value -= 3;
+                Map.MapTile[selTile].Vertice[selVer] = (currentPlayer.PlayerNumber + currentPlayer.PlayerNumber*10);
             }
         }
-        public void BasicTrade()
+        public static void PlaceRoad(Map Map,Player currentPlayer, int i, int j )
+        {
+            if (Map.MapTile[i].Edge[j]==0 && currentPlayer.WoodHeld.Value>=1 && currentPlayer.BrickHeld.Value >= 1)
+            {
+                Map.MapTile[i].Edge[j] = currentPlayer.PlayerNumber;
+            }
+        }
+        public static void BasicTrade()
         {
 
         }
-        public void PortTrade()
+        public static void PortTrade()
         {
 
         }
@@ -181,7 +182,7 @@ namespace Katan_project
         /// <param name="selTile"></param>
         /// <param name="selVer"></param>
         /// <returns></returns>
-        bool DistanceRule(int selTile,int selVer)
+        static bool DistanceRule(Map Map,int selTile,int selVer)
         {
 
             /// REFERENCE MAP
@@ -257,27 +258,27 @@ namespace Katan_project
                 switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[11].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[11].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[12].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[12].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[1].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[1].Vertice[n] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[1].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[1].Vertice[m] == 0)
                             return true;
                         break;
                     case 5:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0)
                             return true;
                         break;
                     default: return false;
@@ -288,27 +289,27 @@ namespace Katan_project
                 switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile-1].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile-1].Vertice[m] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+j].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile+j].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+j+1].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile+j+1].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+1].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile+1].Vertice[m] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile+1].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile+1].Vertice[n] == 0)
                             return true;
                         break;
                     case 5:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0)
                             return true;
                         break;
                     default: return false;
@@ -320,27 +321,27 @@ namespace Katan_project
                 switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[10].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[10].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[17].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[17].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[12].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[12].Vertice[n] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[0].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[0].Vertice[m] == 0)
                             return true;
                         break;
                     case 5:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[0].Vertice[n]==0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[0].Vertice[n]==0)
                             return true;
                         break;
                     default: return false;
@@ -352,27 +353,27 @@ namespace Katan_project
                 switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[0].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[0].Vertice[n] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[11].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[11].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[17].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[17].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[18].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[18].Vertice[n] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[13].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[13].Vertice[m] == 0)
                             return true;
                         break;
                     case 5:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[1].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[1].Vertice[n] == 0)
                             return true;
                         break;
                     default: return false;
@@ -385,27 +386,27 @@ namespace Katan_project
                 switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - k].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile - k].Vertice[n] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - 1].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile - 1].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile + o].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile + o].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile + 1].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile + 1].Vertice[n] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - k + 2].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile - k + 2].Vertice[m] == 0)
                             return true;
                         break;
                     case 5:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[selTile - k + 1].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[selTile - k + 1].Vertice[n] == 0)
                             return true;
                         break;
                     default: return false;
@@ -417,27 +418,27 @@ namespace Katan_project
                 switch (caseNum)
                 {
                     case 0:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[11].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[11].Vertice[n] == 0)
                             return true;
                         break;
                     case 1:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[10].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[10].Vertice[m] == 0)
                             return true;
                         break;
                     case 2:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[9].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[9].Vertice[n] == 0)
                             return true;
                         break;
                     case 3:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[16].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[16].Vertice[n] == 0)
                             return true;
                         break;
                     case 4:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[18].Vertice[m] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[18].Vertice[m] == 0)
                             return true;
                         break;
                     case 5:
-                        if (MapTile[selTile].Vertice[m] == 0 && MapTile[selTile].Vertice[n] == 0 && MapTile[12].Vertice[n] == 0)
+                        if (Map.MapTile[selTile].Vertice[m] == 0 && Map.MapTile[selTile].Vertice[n] == 0 && Map.MapTile[12].Vertice[n] == 0)
                             return true;
                         break;
                     default: return false;

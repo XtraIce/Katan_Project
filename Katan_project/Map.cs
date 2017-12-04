@@ -44,9 +44,12 @@ namespace Katan_project
             new Port(3, "any"),
             new Port(3, "any")
         };
-        public Map()
+        public Map(bool randomizeCheck)
         {
-            SetGenerate();
+            if (randomizeCheck)
+            { RandGenerate(); }
+            else
+            { SetGenerate(); }
             AssignNumber();
             SetBandit();
         }
@@ -120,7 +123,7 @@ namespace Katan_project
                     else if (numDecide == 2)
                         if (numHill <= 2)
                         {
-                            MapTile[i] = Forest[numHill];
+                            MapTile[i] = Hill[numHill];
                             numHill++;
                             break;
                         }
@@ -129,7 +132,7 @@ namespace Katan_project
                     else if (numDecide == 3)
                         if (numMountain <= 2)
                         {
-                            MapTile[i] = Forest[numMountain];
+                            MapTile[i] = Mountain[numMountain];
                             numMountain++;
                             break;
                         }
@@ -138,7 +141,7 @@ namespace Katan_project
                     else if (numDecide == 4)
                         if (numPasture <= 3)
                         {
-                            MapTile[i] = Forest[numPasture];
+                            MapTile[i] = Pasture[numPasture];
                             numPasture++;
                             break;
                         }
@@ -147,7 +150,7 @@ namespace Katan_project
                     else
                         if (numDesert < 1)
                         {
-                            MapTile[i] = Forest[numDesert];
+                            MapTile[i] = Desert[numDesert];
                             numDesert++;
                             break;
                         }
@@ -239,7 +242,7 @@ namespace Katan_project
         {
             for(int i = 0; i <= 18; i++)
             {
-                if (MapTile[i].GetName()=="Desert")
+                if (MapTile[i]is TDesert)
                 {
                     MapTile[i].SetBF();
                 }

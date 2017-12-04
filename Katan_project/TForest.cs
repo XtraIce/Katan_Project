@@ -13,7 +13,7 @@ namespace Katan_project
         {
             typeName = "Forest";
             Wood.Value = 1;
-            Wood.Name = "Wood";
+            Wood.Type = "Wood";
         }
     }
 }

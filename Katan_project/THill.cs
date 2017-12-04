@@ -13,7 +13,7 @@ namespace Katan_project
         {
             typeName = "Hill";
             Brick.Value = 1;
-            Brick.Name = "Brick";
+            Brick.Type = "Brick";
         }
     }
 }

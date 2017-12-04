@@ -9,3 +9,4 @@ C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan
 C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.csproj.CoreCompileInputs.cache
 C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.exe
 C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.pdb
+C:\Users\Riker\OneDrive\SDSU\Compe361 C#\Katan\Katan_project\Katan_Project\Katan_project\obj\Debug\Katan_project.Settings.resources
