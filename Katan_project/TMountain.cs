@@ -8,12 +8,10 @@ namespace Katan_project
 {
     public class TMountain: BTile
     {
-        BResource Ore;
-        public TMountain(string typeName,int diceValue, int[] edge, int[] vertice, bool banditFlag, bool port):base(typeName,diceValue,edge,vertice,banditFlag,port)
+        BResource Ore = new BResource("Ore", 1);
+        public TMountain(string typeName):base(typeName)
         {
-            typeName = "Mountain";
-            Ore.Value = 1;
-            Ore.Type = "Ore";
+
         }
     }
 }

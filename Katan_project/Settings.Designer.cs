@@ -37,27 +37,30 @@
             // MusicCheck
             // 
             this.MusicCheck.AutoSize = true;
-            this.MusicCheck.Location = new System.Drawing.Point(34, 108);
+            this.MusicCheck.Location = new System.Drawing.Point(51, 166);
+            this.MusicCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MusicCheck.Name = "MusicCheck";
-            this.MusicCheck.Size = new System.Drawing.Size(54, 17);
+            this.MusicCheck.Size = new System.Drawing.Size(76, 24);
             this.MusicCheck.TabIndex = 1;
             this.MusicCheck.Text = "Music";
             this.MusicCheck.UseVisualStyleBackColor = true;
             // 
             // Save_button
             // 
-            this.Save_button.Location = new System.Drawing.Point(34, 178);
+            this.Save_button.Location = new System.Drawing.Point(51, 274);
+            this.Save_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Save_button.Name = "Save_button";
-            this.Save_button.Size = new System.Drawing.Size(109, 44);
+            this.Save_button.Size = new System.Drawing.Size(164, 68);
             this.Save_button.TabIndex = 2;
             this.Save_button.Text = "Save";
             this.Save_button.UseVisualStyleBackColor = true;
             // 
             // Cancel_button
             // 
-            this.Cancel_button.Location = new System.Drawing.Point(149, 178);
+            this.Cancel_button.Location = new System.Drawing.Point(224, 274);
+            this.Cancel_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Cancel_button.Name = "Cancel_button";
-            this.Cancel_button.Size = new System.Drawing.Size(109, 44);
+            this.Cancel_button.Size = new System.Drawing.Size(164, 68);
             this.Cancel_button.TabIndex = 3;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.UseVisualStyleBackColor = true;
@@ -66,9 +69,10 @@
             // RandomCheck
             // 
             this.RandomCheck.AutoSize = true;
-            this.RandomCheck.Location = new System.Drawing.Point(34, 85);
+            this.RandomCheck.Location = new System.Drawing.Point(51, 131);
+            this.RandomCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RandomCheck.Name = "RandomCheck";
-            this.RandomCheck.Size = new System.Drawing.Size(90, 17);
+            this.RandomCheck.Size = new System.Drawing.Size(131, 24);
             this.RandomCheck.TabIndex = 4;
             this.RandomCheck.Text = "Random Map";
             this.RandomCheck.UseVisualStyleBackColor = true;
@@ -76,13 +80,14 @@
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1345, 753);
+            this.ClientSize = new System.Drawing.Size(443, 369);
             this.Controls.Add(this.RandomCheck);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.Save_button);
             this.Controls.Add(this.MusicCheck);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Settings";
             this.Text = "Settings";
             this.ResumeLayout(false);

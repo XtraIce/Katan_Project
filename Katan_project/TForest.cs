@@ -8,12 +8,10 @@ namespace Katan_project
 {
     public class TForest: BTile
     {
-        BResource Wood;
-        public TForest(string typeName,int diceValue, int[] edge, int[] vertice, bool banditFlag, bool port) :base(typeName,diceValue,edge,vertice,banditFlag, port)
+        BResource Wood = new BResource("Wood", 1);
+        public TForest(string typeName) :base(typeName)
         {
-            typeName = "Forest";
-            Wood.Value = 1;
-            Wood.Type = "Wood";
+
         }
     }
 }

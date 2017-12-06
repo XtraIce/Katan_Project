@@ -17,8 +17,8 @@ namespace Katan_project
         {
             InitializeComponent();
             SoundPlayer Player = new SoundPlayer();
-            Player.SoundLocation = @"C:\Users\Riker\OneDrive\CatanMaterials\Fanfare_for_Space.wav";
-            Player.Play();
+            SoundPlayer audio = new SoundPlayer(Katan_project.Properties.Resources.Fanfare_for_Space); // here Katan_project is the namespace and Fanfare_for_Space is the audio file name
+            audio.PlayLooping();
         }
 
         private void NewGame_Click(object sender, EventArgs e)

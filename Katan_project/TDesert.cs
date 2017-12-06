@@ -8,9 +8,9 @@ namespace Katan_project
 {
     public class TDesert:BTile
     {
-        public TDesert(string typeName,int diceValue, int[] edge,int[] vertice, bool banditFlag,bool noPort):base(typeName,diceValue,edge,vertice,banditFlag,noPort)
+        public TDesert(string typeName):base(typeName)
         {
-            typeName = "Desert";
+
         }
     }
 }

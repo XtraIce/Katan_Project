@@ -16,14 +16,9 @@ namespace Katan_project
         bool BanditFlag;
         bool HasPort;
 
-        public BTile(string typeName,int diceValue, int []edge,int []vertice,bool banditFlag, bool hasPort)
+        public BTile(string typeName)
         {
             TypeName = typeName;
-            DiceValue = diceValue;
-            Edge = edge;
-            Vertice = vertice;
-            BanditFlag = banditFlag;
-            HasPort = hasPort;
         }
         public void TileAssignValue(int newValue)
         {
@@ -35,6 +30,10 @@ namespace Katan_project
             {
                 Console.WriteLine("invalid dice value. Please assign a valid number between 1-12");
             }
+        }
+        public int getDiceValue()
+        {
+            return DiceValue;
         }
         public string GetName()
         {
@@ -66,5 +65,6 @@ namespace Katan_project
         {
             return PortOwned.TradeType;
         }
+
     }
 }

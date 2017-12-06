@@ -49,6 +49,11 @@
     <Compile Include="Map.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Port.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,13 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +111,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan-BrickCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project Katan menu image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeaMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the_settlers_of_catan_board_game_by_ninjawolfx-d5ucfsn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fanfare_for_Space.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_BrickCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_DesertTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_FieldTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_ForestTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_HillTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_MountainTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_OreCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_PastureTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_SheepCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_WheatCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_WoodCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_BrickCard1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_DefaultTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catan_WheatCard1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_Katan_menu_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KatanMusic.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,12 +25,6 @@ namespace Katan_project
         /// 1 grain     port
         /// </summary>
         public BTile[] MapTile = new BTile[19];
-        TMountain[] Mountain = new TMountain[3];
-        TField[] Field = new TField[4];
-        THill[] Hill = new THill[3];
-        TPasture[] Pasture = new TPasture[4];
-        TForest[] Forest = new TForest[4];
-        TDesert [] Desert = new TDesert[1] ;
 
         Port[] MapPort = new Port[]
         {
@@ -52,6 +46,7 @@ namespace Katan_project
             { SetGenerate(); }
             AssignNumber();
             SetBandit();
+            GeneratePorts();
         }
         /// <summary>
         /// Generates the layout of the map in the standard format
@@ -59,25 +54,25 @@ namespace Katan_project
         /// </summary>
         void SetGenerate()
         {
-            MapTile[0]  = Mountain[0];
-            MapTile[1]  = Field[0];
-            MapTile[2]  = Field[1];
-            MapTile[3]  = Forest[0];
-            MapTile[4]  = Hill[0];
-            MapTile[5]  = Field[2];
-            MapTile[6]  = Pasture[0];
-            MapTile[7]  = Pasture[1];
-            MapTile[8]  = Mountain[1];
-            MapTile[9]  = Hill[1];
-            MapTile[10] = Forest[1];
-            MapTile[11] = Pasture[2];
-            MapTile[12] = Hill[2];
-            MapTile[13] = Forest[2];
-            MapTile[14] = Mountain[2];
-            MapTile[15] = Field[3];
-            MapTile[16] = Forest[3];
-            MapTile[17] = Pasture[3];
-            MapTile[18] = Desert[0];
+            MapTile[0] = new TMountain("Mountain");
+            MapTile[1] = new TField("Field");
+            MapTile[2] = new TField("Field");
+            MapTile[3] = new TForest("Forest");
+            MapTile[4] = new THill("Hill");
+            MapTile[5] = new TField("Field");
+            MapTile[6] = new TPasture("Pasture");
+            MapTile[7] = new TPasture("Pasture");
+            MapTile[8] = new TMountain("Mountain");
+            MapTile[9] = new THill("Hill");
+            MapTile[10] = new TForest("Forest");
+            MapTile[11] = new TPasture("Pasture");
+            MapTile[12] = new THill("Hill");
+            MapTile[13] = new TForest("Forest");
+            MapTile[14] = new TMountain("Mountain");
+            MapTile[15] = new TField("Field");
+            MapTile[16] = new TForest("Forest");
+            MapTile[17] = new TPasture("Pasture");
+            MapTile[18] = new TDesert("Desert");
 
         }
         /// <summary>
@@ -95,16 +90,20 @@ namespace Katan_project
             int numPasture=0;
             int numDesert=0;
 
-            for(int i=0;i<=18;i++)
+            for (int i=0;i<=18;i++)
             {
                 while (true)
                 {
-                    int numDecide = rnd.Next(0, 5);
-                    if (numDecide == 0)
+                    int numDecide = rnd.Next(0, 6);
+                    if (numField == 4 && numForest == 4 && numHill == 3 && numMountain == 3 && numPasture == 4 && numDesert==1)
+                    {
+                        break;
+                    }
+                    else if (numDecide == 0)
                     {
                         if (numField <= 3)
                         {
-                            MapTile[i] = Field[numField];
+                            MapTile[i] = new TField("Field");
                             numField++;
                             break;
                         }
@@ -114,7 +113,7 @@ namespace Katan_project
                     else if (numDecide == 1)
                         if (numForest <= 3)
                         {
-                            MapTile[i] = Forest[numForest];
+                            MapTile[i] = new TForest("Forest");
                             numForest++;
                             break;
                         }
@@ -123,7 +122,7 @@ namespace Katan_project
                     else if (numDecide == 2)
                         if (numHill <= 2)
                         {
-                            MapTile[i] = Hill[numHill];
+                            MapTile[i] = new THill("Hill");
                             numHill++;
                             break;
                         }
@@ -132,7 +131,7 @@ namespace Katan_project
                     else if (numDecide == 3)
                         if (numMountain <= 2)
                         {
-                            MapTile[i] = Mountain[numMountain];
+                            MapTile[i] = new TMountain("Mountain");
                             numMountain++;
                             break;
                         }
@@ -141,16 +140,16 @@ namespace Katan_project
                     else if (numDecide == 4)
                         if (numPasture <= 3)
                         {
-                            MapTile[i] = Pasture[numPasture];
+                            MapTile[i] = new TPasture("Pasture");
                             numPasture++;
                             break;
                         }
                         else
                             continue;
-                    else
-                        if (numDesert < 1)
+                    else if (numDecide == 5)
+                        if (numDesert == 0)
                         {
-                            MapTile[i] = Desert[numDesert];
+                            MapTile[i] = new TDesert("Desert");
                             numDesert++;
                             break;
                         }
@@ -165,25 +164,23 @@ namespace Katan_project
         /// </summary>
         void AssignNumber()
         {
-            MapTile[0].TileAssignValue(10);
-            MapTile[1].TileAssignValue(12);
-            MapTile[2].TileAssignValue(9);
-            MapTile[3].TileAssignValue(8);
-            MapTile[4].TileAssignValue(5);
-            MapTile[5].TileAssignValue(6);
-            MapTile[6].TileAssignValue(11);
-            MapTile[7].TileAssignValue(5);
-            MapTile[8].TileAssignValue(8);
-            MapTile[9].TileAssignValue(10);
-            MapTile[10].TileAssignValue(9);
-            MapTile[11].TileAssignValue(2);
-            MapTile[12].TileAssignValue(6);
-            MapTile[13].TileAssignValue(11);
-            MapTile[14].TileAssignValue(3);
-            MapTile[15].TileAssignValue(4);
-            MapTile[16].TileAssignValue(3);
-            MapTile[17].TileAssignValue(4);
-            MapTile[18].TileAssignValue(0);
+            int[] array = new int[19] { 10,12,9,8,5,6,11,5,8,10,9,2,6,11,3,4,3,4,0};
+            int j = 0;
+            int i = 0;
+            while(array[j]!=0)
+            { 
+                if (MapTile[i] is TDesert)
+                {
+                    MapTile[i].TileAssignValue(0);
+                    i++;
+                }
+                else
+                {
+                    MapTile[i].TileAssignValue(array[j]);
+                    j++;
+                    i++;
+                }
+            }
         }
         /// <summary>
         /// generate ports on specified tiles

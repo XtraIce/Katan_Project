@@ -8,12 +8,10 @@ namespace Katan_project
 {
     public class TPasture: BTile
     {
-        BResource Sheep;
-        public TPasture(string typeName,int diceValue, int[] edge, int[] vertice, bool banditFlag, bool port):base(typeName,diceValue,edge,vertice,banditFlag,port)
+        BResource Sheep = new BResource("Sheep", 1);
+        public TPasture(string typeName):base(typeName)
         {
-            typeName = "Pasture";
-            Sheep.Value = 1;
-            Sheep.Type = "Sheep";
+
         }
     }
 }

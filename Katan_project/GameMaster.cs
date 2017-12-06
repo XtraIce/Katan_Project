@@ -447,6 +447,74 @@ namespace Katan_project
             Console.WriteLine("Not a valid path on CatanMap");
             return false;
         }
-
+        /// <summary>
+        /// ya ya, judge me. I hammered this because I don't have another 3 days
+        /// to figure out an alogrithm for this like the Distance rule does.
+        /// 
+        /// Updates so the vertices of each tile have the same value if they connect to each other
+        /// </summary>
+        /// <param name="Map"></param>
+        static void UpdateVertices(Map Map)
+        {
+            Map.MapTile[11].Vertice[5] = Map.MapTile[0].Vertice[1];
+            Map.MapTile[11].Vertice[4] = Map.MapTile[0].Vertice[2];
+            Map.MapTile[12].Vertice[0] = Map.MapTile[0].Vertice[2];
+            Map.MapTile[12].Vertice[5] = Map.MapTile[0].Vertice[3];
+            Map.MapTile[1].Vertice[1] = Map.MapTile[0].Vertice[3];
+            Map.MapTile[1].Vertice[0] = Map.MapTile[0].Vertice[4];
+            Map.MapTile[12].Vertice[4] = Map.MapTile[1].Vertice[2];
+            Map.MapTile[13].Vertice[0] = Map.MapTile[1].Vertice[2];
+            Map.MapTile[13].Vertice[5] = Map.MapTile[1].Vertice[3];
+            Map.MapTile[2].Vertice[1] = Map.MapTile[1].Vertice[3];
+            Map.MapTile[13].Vertice[4] = Map.MapTile[2].Vertice[2];
+            Map.MapTile[3].Vertice[0] = Map.MapTile[2].Vertice[2];
+            Map.MapTile[3].Vertice[5] = Map.MapTile[2].Vertice[3];
+            Map.MapTile[13].Vertice[3] = Map.MapTile[3].Vertice[1];
+            Map.MapTile[14].Vertice[5] = Map.MapTile[3].Vertice[1];
+            Map.MapTile[14].Vertice[4] = Map.MapTile[3].Vertice[2];
+            Map.MapTile[4].Vertice[0] = Map.MapTile[3].Vertice[2];
+            Map.MapTile[4].Vertice[5] = Map.MapTile[3].Vertice[3];
+            Map.MapTile[14].Vertice[3] = Map.MapTile[4].Vertice[1];
+            Map.MapTile[5].Vertice[5] = Map.MapTile[4].Vertice[1];
+            Map.MapTile[5].Vertice[4] = Map.MapTile[4].Vertice[2];
+            Map.MapTile[14].Vertice[2] = Map.MapTile[5].Vertice[0];
+            Map.MapTile[15].Vertice[4] = Map.MapTile[5].Vertice[0];
+            Map.MapTile[15].Vertice[3] = Map.MapTile[5].Vertice[1];
+            Map.MapTile[6].Vertice[5] = Map.MapTile[5].Vertice[1];
+            Map.MapTile[6].Vertice[4] = Map.MapTile[5].Vertice[2];
+            Map.MapTile[15].Vertice[2] = Map.MapTile[6].Vertice[0];
+            Map.MapTile[7].Vertice[4] = Map.MapTile[6].Vertice[0];
+            Map.MapTile[7].Vertice[3] = Map.MapTile[6].Vertice[1];
+            Map.MapTile[15].Vertice[1] = Map.MapTile[7].Vertice[5];
+            Map.MapTile[16].Vertice[3] = Map.MapTile[7].Vertice[5];
+            Map.MapTile[16].Vertice[2] = Map.MapTile[7].Vertice[0];
+            Map.MapTile[8].Vertice[4] = Map.MapTile[7].Vertice[0];
+            Map.MapTile[8].Vertice[3] = Map.MapTile[7].Vertice[1];
+            Map.MapTile[16].Vertice[1] = Map.MapTile[8].Vertice[5];
+            Map.MapTile[9].Vertice[3] = Map.MapTile[8].Vertice[5];
+            Map.MapTile[9].Vertice[2] = Map.MapTile[8].Vertice[0];
+            Map.MapTile[16].Vertice[0] = Map.MapTile[9].Vertice[4];
+            Map.MapTile[17].Vertice[2] = Map.MapTile[9].Vertice[4];
+            Map.MapTile[17].Vertice[1] = Map.MapTile[9].Vertice[5];
+            Map.MapTile[10].Vertice[3] = Map.MapTile[9].Vertice[5];
+            Map.MapTile[10].Vertice[2] = Map.MapTile[9].Vertice[0];
+            Map.MapTile[17].Vertice[0] = Map.MapTile[10].Vertice[4];
+            Map.MapTile[11].Vertice[2] = Map.MapTile[10].Vertice[4];
+            Map.MapTile[11].Vertice[1] = Map.MapTile[10].Vertice[5];
+            Map.MapTile[17].Vertice[5] = Map.MapTile[11].Vertice[3];
+            Map.MapTile[12].Vertice[1] = Map.MapTile[11].Vertice[3];
+            Map.MapTile[17].Vertice[4] = Map.MapTile[12].Vertice[2];
+            Map.MapTile[18].Vertice[0] = Map.MapTile[12].Vertice[2];
+            Map.MapTile[18].Vertice[5] = Map.MapTile[12].Vertice[3];
+            Map.MapTile[13].Vertice[1] = Map.MapTile[12].Vertice[3];
+            Map.MapTile[18].Vertice[4] = Map.MapTile[13].Vertice[2];
+            Map.MapTile[14].Vertice[0] = Map.MapTile[13].Vertice[2];
+            Map.MapTile[18].Vertice[3] = Map.MapTile[14].Vertice[1];
+            Map.MapTile[15].Vertice[5] = Map.MapTile[14].Vertice[1];
+            Map.MapTile[18].Vertice[2] = Map.MapTile[15].Vertice[0];
+            Map.MapTile[16].Vertice[4] = Map.MapTile[15].Vertice[0];
+            Map.MapTile[18].Vertice[1] = Map.MapTile[16].Vertice[5];
+            Map.MapTile[17].Vertice[3] = Map.MapTile[16].Vertice[5];
+        }
     }
 }

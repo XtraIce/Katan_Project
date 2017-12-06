@@ -27,7 +27,7 @@ namespace Katan_project
 
         private void RandomCheck_CheckedChanged(object sender, EventArgs e)
         {
-
+            GameWindow.randomizeCheck = !GameWindow.randomizeCheck;
         }
     }
 }
