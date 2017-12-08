@@ -175,5 +175,29 @@
   <ItemGroup>
     <None Include="Resources\KatanMusic.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueCity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueSettlement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeCIty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeSettlement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedSettlement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteCity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteSettlement.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

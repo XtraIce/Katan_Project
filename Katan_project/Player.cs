@@ -8,6 +8,12 @@ namespace Katan_project
 {
     public class Player
     {
+        string playerName;
+        public string PlayerName
+        {
+            get { return playerName; }
+        }
+
         int playerNumber;
         public int PlayerNumber
         {
@@ -56,20 +62,16 @@ namespace Katan_project
             }
         }
 
-        public BResource SheepHeld;
-        public BResource WoodHeld;
-        public BResource BrickHeld;
-        public BResource GrainHeld;
-        public BResource OreHeld;
+        public BResource SheepHeld = new BResource("Sheep",0);
+        public BResource WoodHeld = new BResource("Wood",0);
+        public BResource BrickHeld = new BResource("Brick", 0);
+        public BResource GrainHeld = new BResource("Grain", 0);
+        public BResource OreHeld = new BResource("Ore", 0);
 
-        public Player(int PlayerNum)
+        public Player(string PlayerName,int PlayerNum)
         {
+            playerName = PlayerName;
             playerNumber = PlayerNum;
-            SheepHeld.Value = 0;SheepHeld.Type = "Sheep";
-            WoodHeld.Value = 0; SheepHeld.Type = "Wood";
-            BrickHeld.Value = 0; SheepHeld.Type = "Brick";
-            GrainHeld.Value = 0; SheepHeld.Type = "Grain";
-            OreHeld.Value = 0; SheepHeld.Type = "Ore";
         }
     }
 }

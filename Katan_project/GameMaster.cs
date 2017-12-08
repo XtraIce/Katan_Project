@@ -131,14 +131,15 @@ namespace Katan_project
                 }
             }
         }
-        public static void PlaceSettlement(Map Map,Player currentPlayer, int selTile, int selVer)
+        public static void BuildSettlement(Map Map,Player currentPlayer, int selTile, int selVer)
         {
             if (currentPlayer.WoodHeld.Value >= 1 && currentPlayer.GrainHeld.Value >= 1 &&
                currentPlayer.BrickHeld.Value >= 1 && currentPlayer.SheepHeld.Value >= 1)
             {
-                if (Map.MapTile[selTile].Vertice[selVer] == 0 && DistanceRule(Map,selTile,selVer))
+                if (Map.MapTile[selTile].Vertice[selVer] == 0)
                 {
                     Map.MapTile[selTile].Vertice[selVer] = currentPlayer.PlayerNumber;
+                    currentPlayer.OwnedSettlements += 1;
                 }
                 else
                 {
@@ -150,6 +151,17 @@ namespace Katan_project
                 Console.WriteLine("Insufficient resources.");
             }
         }
+        /// <summary>
+        /// Method checks if requested player has enough resources to build a city
+        /// removes resources from player
+        /// builds a city of the player's color on the vertice specified
+        /// removes 1 from player's settlement total
+        /// adds 1 to player's city total
+        /// </summary>
+        /// <param name="Map"></param>
+        /// <param name="currentPlayer"></param>
+        /// <param name="selTile"></param>
+        /// <param name="selVer"></param>
         public static void UpgradeToCity(Map Map,Player currentPlayer, int selTile, int selVer)
         {
             if(currentPlayer.GrainHeld.Value>=2&&currentPlayer.OreHeld.Value>=3)
@@ -157,13 +169,26 @@ namespace Katan_project
                 currentPlayer.GrainHeld.Value -= 2;
                 currentPlayer.OreHeld.Value -= 3;
                 Map.MapTile[selTile].Vertice[selVer] = (currentPlayer.PlayerNumber + currentPlayer.PlayerNumber*10);
+                currentPlayer.OwnedSettlements -= 1;
+                currentPlayer.OwnedCities += 1;
             }
         }
+        /// <summary>
+        /// Method checks if requested palyer has enough resources to build a road
+        /// removes resources from player
+        /// builds a road of the player's color on the vertice specified
+        /// adds 1 to player's road total
+        /// </summary>
+        /// <param name="Map"></param>
+        /// <param name="currentPlayer"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
         public static void PlaceRoad(Map Map,Player currentPlayer, int i, int j )
         {
             if (Map.MapTile[i].Edge[j]==0 && currentPlayer.WoodHeld.Value>=1 && currentPlayer.BrickHeld.Value >= 1)
             {
                 Map.MapTile[i].Edge[j] = currentPlayer.PlayerNumber;
+                currentPlayer.OwnedRoads += 1;
             }
         }
         public static void BasicTrade()
@@ -182,7 +207,7 @@ namespace Katan_project
         /// <param name="selTile"></param>
         /// <param name="selVer"></param>
         /// <returns></returns>
-        static bool DistanceRule(Map Map,int selTile,int selVer)
+        public static bool DistanceRule(Map Map,int selTile,int selVer)
         {
 
             /// REFERENCE MAP
@@ -242,7 +267,7 @@ namespace Katan_project
             //neighbor one inner tile, so this:
             //sets a vert4 case to a vert5
             //sets a vert2 case to a vert3 
-            if (selTile%2==0 && selTile<=10)
+            if (selTile!=0 && selTile%2==0 && selTile<=10)
             {
                 if (caseNum==4)
                     caseNum = 5;
@@ -447,6 +472,7 @@ namespace Katan_project
             Console.WriteLine("Not a valid path on CatanMap");
             return false;
         }
+
         /// <summary>
         /// ya ya, judge me. I hammered this because I don't have another 3 days
         /// to figure out an alogrithm for this like the Distance rule does.
@@ -466,6 +492,7 @@ namespace Katan_project
             Map.MapTile[13].Vertice[0] = Map.MapTile[1].Vertice[2];
             Map.MapTile[13].Vertice[5] = Map.MapTile[1].Vertice[3];
             Map.MapTile[2].Vertice[1] = Map.MapTile[1].Vertice[3];
+            Map.MapTile[2].Vertice[0] = Map.MapTile[1].Vertice[4];
             Map.MapTile[13].Vertice[4] = Map.MapTile[2].Vertice[2];
             Map.MapTile[3].Vertice[0] = Map.MapTile[2].Vertice[2];
             Map.MapTile[3].Vertice[5] = Map.MapTile[2].Vertice[3];
