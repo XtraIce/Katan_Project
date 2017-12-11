@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// RIKER QUINTANA
+/// 816823248
+/// </summary>
 namespace Katan_project
 {
     static class Program

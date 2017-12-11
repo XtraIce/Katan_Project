@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// RIKER QUINTANA
+/// 816823248
+/// </summary>
 namespace Katan_project
 {
     public class BResource
@@ -15,7 +18,7 @@ namespace Katan_project
                 return resValue;
             }
             set {
-                if (value > 0)
+                if (value >= 0)
                     resValue = value; 
                 }
         }

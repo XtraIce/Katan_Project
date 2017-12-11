@@ -199,5 +199,62 @@
   <ItemGroup>
     <None Include="Resources\WhiteSettlement.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueRoadVert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeRoadVert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedRoadVert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteRoadVert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedRoadRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueRoadLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueRoadRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueRoadVert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeRoadLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeRoadRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrangeRoadVert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedRoadLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteRoadLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteRoadRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteRoadVert1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoadPlacementVert.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoadPlacementVert2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoadPlacementVert3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoadPlacementVert4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

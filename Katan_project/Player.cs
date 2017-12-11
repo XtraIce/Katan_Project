@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// RIKER QUINTANA
+/// 816823248
+/// </summary>
 namespace Katan_project
 {
     public class Player
     {
+        int victoryPoints;
+
         string playerName;
         public string PlayerName
         {
@@ -25,11 +30,11 @@ namespace Katan_project
             get { return ownedSettlements; }
             set
             {
-                if (value + 1 > ownedSettlements)
+                /*if (value + 1 > ownedSettlements)
                     Console.WriteLine("cannot increase beyond 1 at a time.");
                 else if (ownedSettlements == 5)
                     Console.WriteLine("cannot exceed 4 cities per player.");
-                else
+                else*/
                     ownedSettlements = value;
             }
         }
@@ -39,11 +44,11 @@ namespace Katan_project
             get { return ownedCities; }
             set
             {
-                if (value+1 > ownedCities)
+                /*if (value+1 > ownedCities)
                     Console.WriteLine("cannot increase beyond 1 at a time.");
                 else if (ownedCities == 4)
                     Console.WriteLine("cannot exceed 4 cities per player.");
-                else
+                else*/
                     ownedCities = value;
             }
         }
@@ -72,6 +77,12 @@ namespace Katan_project
         {
             playerName = PlayerName;
             playerNumber = PlayerNum;
+        }
+
+        public int VictoryPoints()
+        {
+            victoryPoints = ownedSettlements + 2 * OwnedCities;
+            return victoryPoints;
         }
     }
 }
